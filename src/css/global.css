@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+:root {
+  --main-color: #f08080;
+  --second-color: #ffd3d3;
+}
 
 * {
   -webkit-box-sizing: border-box;
@@ -6,13 +9,18 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+body {
   font-family: 'Roboto', sans-serif;
+  background-color: #eee;
 }
 
 header {
   padding: 0;
   margin: 0;
-  background-color: #eee;
+  background-color: var(--main-color);
+  color: white;
 }
 
 header .navigation {
@@ -20,7 +28,21 @@ header .navigation {
   display: -webkit-box;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigation h3 {
+  font-size: 3rem;
+  font-weight: 300;
+  border: 1px solid var(--second-color);
+  padding: 0.2rem 1.5rem;
+  font-family: 'Dancing Script', cursive;
 }
 
 header .navigation .nav-links {
@@ -30,8 +52,13 @@ header .navigation .nav-links {
   -moz-column-gap: 2rem;
   column-gap: 2rem;
   margin-right: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.nav-links a:hover {
+  border-bottom: 1px solid var(--second-color);
+  transition: all 1s;
 }
 
 footer {
@@ -39,14 +66,87 @@ footer {
 }
 
 .footer {
-  background-color: #eee;
+  background-color: var(--main-color);
   padding: 1rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .footer-text {
   text-align: center;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: white;
+}
+
+#meal-section {
+  margin: 5rem 15rem;
+}
+
+.meals-lists {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.meal-list {
+  background-color: var(--second-color);
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+.meal-list img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.card-title h3 {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  font-family: 'Dancing Script', cursive;
+}
+
+.icon-like {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.favorite {
+  color: var(--main-color);
+  margin-right: 3px;
+}
+
+.favorite:hover {
+  color: white;
+  transition: 0.2s;
+}
+
+.meal-card-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.comment {
+  padding: 0.3rem 0.9rem;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 50rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 7px 7px 5px -7px rgba(0, 0, 0, 0.52);
+  margin-bottom: 1rem;
+}
+
+.comment:hover {
+  background-color: white;
+  color: var(--second-color);
+  transition: 0.2s;
+  cursor: pointer;
 }
