@@ -14,7 +14,7 @@ const displayMeal = async () => {
 
     data.forEach((meal) => {
       const li = document.createElement('li');
-      li.classList.add('meal-list')
+      li.classList.add('meal-list');
       li.innerHTML = `
       <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
       <div class="meal-card-content">
@@ -27,8 +27,8 @@ const displayMeal = async () => {
       mealList.appendChild(li);
     });
   } catch (error) {
-    
+    console.error(`Error fetching dish: ', ${error}`);
   }
-}
+};
 
 export default displayMeal;
