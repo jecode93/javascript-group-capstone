@@ -1,4 +1,25 @@
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header {
+  padding: 0;
+  margin: 0;
+  background-color: silver;
+}
+.navigation {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+}
+.nav-links {
+  display: flex;
+  column-gap: 2rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
