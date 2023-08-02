@@ -9,10 +9,9 @@ export const openPopup = (meal) => {
   popupImage.src = meal.strMealThumb;
   popupImage.alt = meal.strMeal;
   popupTitle.textContent = meal.strMeal;
-  
   foodDetail.innerHTML = `<li>Area:${meal.strArea} </li>
   <li>Category:${meal.strCategory} Pizaaa</li>
-`
+`;
 
   popup.style.display = 'block';
 };
