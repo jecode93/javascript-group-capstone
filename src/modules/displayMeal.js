@@ -1,9 +1,11 @@
 // script.js
+import API from './api.js';
 import getLikes from './getLikes.js';
 import postLike from './postlikes.js';
 import { openPopup, closePopup, addPopupOutsideClickListener } from './popup/popup.js';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+const api = new API();
 
 const displayMeal = async () => {
   const mealList = document.querySelector('.meals-lists');
@@ -60,5 +62,8 @@ document.getElementById('close').addEventListener('click', () => {
 
 // Close the popup when clicking outside the popup
 addPopupOutsideClickListener();
+document.addEventListener('DOMContentLoaded', displayMeal);
+
+
 
 export default displayMeal;

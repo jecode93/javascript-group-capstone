@@ -50,7 +50,7 @@
     </ul>
 
     <div class="commentss">
-      <h2>Add a comment</h2>
+      <!-- <h2>Add a comment</h2>
       <form id="form" action="">
         <label for="name"></label>
         <input type="text" id="name" placeholder="Enter your name" />
@@ -58,16 +58,26 @@
         <textarea id="message" name="message" rows="4" required></textarea>
         <button id="btn-comment">Comment</button>
 
-      </form>
+      </form> -->
+
+      <div class="form pp-comments-container">
+        <p class="pp-form-title">Add a comment</p>
+        <input class="your-name" type="text" placeholder="Your name">
+        <textarea class="msg" placeholder="Your insights"></textarea>
+        <button id="pp-comment-btn">Comment</button>
+    </div>
     </div>
   </div>
-
+ 
   <footer>
     <div class="footer">
       <p class="footer-text">Created by - <strong>Jean Emmanuel Cadet</strong> and <strong>Zelalem Yohannes</strong></p>
     </div>
   </footer>
-  <script src="./index.js"></script>
+  <script type="module" src="./index.js">
+    
+  </script>
+
 </body>
 
 </html>
