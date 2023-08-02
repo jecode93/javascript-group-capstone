@@ -187,3 +187,36 @@ footer {
 .close:hover {
   color: red;
 }
+
+.commentss {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin-top: 5px;
+}
+
+input {
+  border-radius: 3px;
+  border: solid rgb(0, 51, 34) 1px;
+  padding: 6px;
+}
+textarea {
+  border-radius: 5px;
+}
+
+#displayed {
+  margin-top: 3%;
+}
+#btn-comment {
+  padding: 8px;
+  background-color: green;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
