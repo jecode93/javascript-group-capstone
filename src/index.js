@@ -20,7 +20,7 @@ const postCommentToAPI = async (api, index) => {
       await api.fetchData(commentsURL, 'POST', body, headers);
       newCommentUsername.value = '';
       newCommentMsg.value = '';
-      console.log('Comment added successfully'); // Display success message
+      console.log('Commmment added successfully'); // Display success message
     } catch (error) {
       console.error(error);
       alert('Failed to add comment. Please try again.');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const sampleAPI = {
     fetchData: async (url, method, body, headers) => {
       // Simulate a successful response
-      return { status: 200, json: async () => ({ message: 'Comment added successfully' }) };
+      return { status: 200, json: async () => ({ message: 'Comment acccdded successfully' }) };
     },
   };
 
