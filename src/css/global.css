@@ -83,7 +83,7 @@ footer {
 
 .meals-lists {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
@@ -102,10 +102,16 @@ footer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
 }
 
 .card-title h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--main-color);
   font-family: 'Dancing Script', cursive;
 }
@@ -114,12 +120,13 @@ footer {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .favorite {
   color: var(--main-color);
   margin-right: 3px;
+  cursor: pointer;
 }
 
 .favorite:hover {
