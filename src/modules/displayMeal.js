@@ -30,5 +30,7 @@ const displayMeal = async () => {
     console.error(`Error fetching dish: ', ${error}`);
   }
 };
+document.addEventListener('DOMContentLoaded', displayMeal);
+
 
 export default displayMeal;

@@ -1,4 +1,11 @@
 import './css/global.css';
 import displayMeal from './modules/displayMeal.js';
 
-document.addEventListener('DOMContentLoaded', displayMeal);
+
+
+
+const x = document.getElementById('close-icon');
+x.style.display = 'none'
+
+
+
