@@ -45,7 +45,6 @@ a {
   font-family: 'Dancing Script', cursive;
 }
 
-
 header .navigation .nav-links {
   display: -webkit-box;
   display: flex;
@@ -206,6 +205,7 @@ input {
   border: solid rgb(0, 51, 34) 1px;
   padding: 6px;
 }
+
 textarea {
   border-radius: 5px;
 }
@@ -213,6 +213,7 @@ textarea {
 #displayed {
   margin-top: 3%;
 }
+
 #btn-comment {
   padding: 8px;
   background-color: green;
