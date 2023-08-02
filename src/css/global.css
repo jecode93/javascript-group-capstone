@@ -1,6 +1,6 @@
 :root {
-  --main-color: #f08080;
-  --second-color: #ffd3d3;
+  --main-color: #5c3838;
+  --second-color: #9d9ac0;
 }
 
 * {
@@ -148,5 +148,76 @@ footer {
   background-color: white;
   color: var(--second-color);
   transition: 0.2s;
+  cursor: pointer;
+}
+
+/* Add your desired styles for the popup window here */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.popup img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.popup h3 {
+  margin: 10px 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+.commentss {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin-top: 5px;
+}
+
+input {
+  border-radius: 3px;
+  border: solid rgb(0, 51, 34) 1px;
+  padding: 6px;
+}
+
+textarea {
+  border-radius: 5px;
+}
+
+#displayed {
+  margin-top: 3%;
+}
+
+#btn-comment {
+  padding: 8px;
+  background-color: green;
+  border: none;
+  color: white;
   cursor: pointer;
 }
