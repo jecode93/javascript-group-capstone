@@ -4,10 +4,15 @@ export const openPopup = (meal) => {
   const popup = document.getElementById('popup');
   const popupImage = document.getElementById('popup-image');
   const popupTitle = document.getElementById('popup-title');
+  const foodDetail = document.getElementById('foodDetail');
 
   popupImage.src = meal.strMealThumb;
   popupImage.alt = meal.strMeal;
   popupTitle.textContent = meal.strMeal;
+  
+  foodDetail.innerHTML = `<li>Area:${meal.strArea} </li>
+  <li>Category:${meal.strCategory} Pizaaa</li>
+`
 
   popup.style.display = 'block';
 };
