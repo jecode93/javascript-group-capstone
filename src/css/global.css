@@ -151,3 +151,39 @@ footer {
   transition: 0.2s;
   cursor: pointer;
 }
+
+/* Add your desired styles for the popup window here */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.popup img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.popup h3 {
+  margin: 10px 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}

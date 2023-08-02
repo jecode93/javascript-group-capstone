@@ -32,34 +32,11 @@
 
 
   <!-- Pop-up -->
-
-  <section class="popup-section hide">
-    <article class="popup">
-        <div class="pp-header">
-            <button id="close-icon">X</button>
-            <img id="pp-image" class="image" src="">
-            <p class="pp-meal-name"></p>
-            <div class="pp-meal-details">
-                <p class="pp-meal-detail">Area: <span id="pp-meal-area"></span></p>
-                <p class="pp-meal-detail">Category: <span id="pp-meal-category"></span></p>
-            </div>
-        </div>
-        <div class="pp-body">
-            <p class="pp-comments-title">Comments (<span id="comments-number"></span>)</p>
-            <ul class="pp-comments-container">
-
-            </ul>
-        </div>
-        <div class="pp-footer">
-            <div class="form">
-                <p class="pp-form-title">Add a comment</p>
-                <input class="your-name" type="text" placeholder="Your name">
-                <textarea class="msg" placeholder="Your insights"></textarea>
-                <button id="pp-comment-btn">Comment</button>
-            </div>
-        </div>
-    </article>
-</section>
+  <div id="popup" class="popup">
+    <span class="close" id="close">&times;</span>
+    <img id="popup-image" src="" alt="">
+    <h3 id="popup-title"></h3>
+  </div>
 
   <footer>
     <div class="footer">
