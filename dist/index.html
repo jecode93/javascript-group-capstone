@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/global.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <title>Meal'app</title>
 <script defer src="main.js"></script></head>
+
 <body>
   <header>
     <div class="navigation">
-        <div>
-            <h3> <a href="#">Meal'App</a></h3>
-        </div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#" class="meal-count">Meals</a></li>
-                <li><a href="#">Menu 1</a></li>
-                <li><a href="#">Menu 2</a></li>
-              </ul>
-        </div>
+      <div>
+        <h3> <a href="#">Meal'App</a></h3>
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#" class="meal-count">Meals</a></li>
+          <li><a href="#">Menu 1</a></li>
+          <li><a href="#">Menu 2</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -31,43 +36,50 @@
   </section>
 
 
+  <section>
+
+  </section>
   <!-- Pop-up -->
+  <div id="popup" class="popup">
+    <span class="close" id="close">&times;</span>
+    <img id="popup-image" src="" alt="">
+    <h3 id="popup-title"></h3>
 
-  <section class="popup-section hide">
-    <article class="popup">
-        <div class="pp-header">
-            <button id="close-icon">X</button>
-            <img id="pp-image" class="image" src="">
-            <p class="pp-meal-name"></p>
-            <div class="pp-meal-details">
-                <p class="pp-meal-detail">Area: <span id="pp-meal-area"></span></p>
-                <p class="pp-meal-detail">Category: <span id="pp-meal-category"></span></p>
-            </div>
-        </div>
-        <div class="pp-body">
-            <p class="pp-comments-title">Comments (<span id="comments-number"></span>)</p>
-            <ul class="pp-comments-container">
+    <ul id="foodDetail" class="food-detail">
+    
+    </ul>
 
-            </ul>
-        </div>
-        <div class="pp-footer">
-            <div class="form">
-                <p class="pp-form-title">Add a comment</p>
-                <input class="your-name" type="text" placeholder="Your name">
-                <textarea class="msg" placeholder="Your insights"></textarea>
-                <button id="pp-comment-btn">Comment</button>
-            </div>
-        </div>
-    </article>
-</section>
+    <div class="commentss">
+      <h2>Add a comment</h2>
+       
+      <ul id="updated"></ul>
+      <form id="form" action="">
+        <label for="name"></label>
+        <input type="text" id="name" placeholder="Enter your name" />
+        <label for="message"></label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button id="btn-comment">Comment</button>
 
+      </form>
+
+      <div class="form pp-comments-container">
+        <p class="pp-form-title">Add a comment</p>
+        <input class="your-name" type="text" placeholder="Your name">
+        <textarea class="msg" placeholder="Your insights"></textarea>
+        <button id="pp-comment-btn">Comment</button>
+    </div>
+    </div>
+  </div>
+ 
   <footer>
     <div class="footer">
       <p class="footer-text">Created by - <strong>Jean Emmanuel Cadet</strong> and <strong>Zelalem Yohannes</strong></p>
     </div>
   </footer>
+  <script type="module" src="./index.js">
+    
+  </script>
 
-  <script src="./modules/popup/popUp.jsss"></script>
-  <source>
 </body>
+
 </html>
