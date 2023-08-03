@@ -21,8 +21,6 @@ const app = async () => {
   }
 };
 
-app();
-
 const id = 'VGgsbNwMjLbF1Y3jHgOe';
 
 export { id };

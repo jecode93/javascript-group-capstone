@@ -1,7 +1,8 @@
 // script.js
 import getLikes from './getLikes.js';
 import postLike from './postlikes.js';
-import { openPopup, closePopup, addPopupOutsideClickListener } from './popup/popup.js';
+import { closePopup, addPopupOutsideClickListener } from './popup/popup.js';
+import showPopup from './popup/newPopup.js';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
@@ -30,8 +31,8 @@ const displayMeal = async () => {
         </div>
       `;
 
-      const commentBtn = li.querySelector('.comment');
-      commentBtn.addEventListener('click', () => openPopup(meal));
+      // const commentBtn = li.querySelector('.comment');
+      // commentBtn.addEventListener('click', () => openPopup(meal));
 
       const updateLike = async () => {
         await postLike(meal.idMeal);
@@ -44,19 +45,23 @@ const displayMeal = async () => {
         li.querySelector('.icon-like').textContent = `${value} likes`;
       });
 
+      const btnComment = li.querySelector('.comment');
+      const popup = document.getElementById('popup');
+      btnComment.addEventListener('click', () => {
+        popup.style.display = 'block';
+        showPopup(meal.idMeal);
+      });
+
       mealList.appendChild(li);
     });
   } catch (error) {
-    console.error(`Error fetching dish: ${error}`);
+    console.error(`Error fetching meal: ${error}`);
   }
 };
 
 document.addEventListener('DOMContentLoaded', displayMeal);
 
 // Close the popup when the close button is clicked
-document.getElementById('close').addEventListener('click', () => {
-  closePopup();
-});
 
 // Close the popup when clicking outside the popup
 addPopupOutsideClickListener();

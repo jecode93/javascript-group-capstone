@@ -159,7 +159,7 @@ footer {
 }
 
 /* Add your desired styles for the popup window here */
-.popup {
+.popup-sec {
   display: none;
   position: fixed;
   top: 50%;
@@ -169,6 +169,8 @@ footer {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-radius: 10px;
+  max-width: 50%;
 }
 
 .popup img {
@@ -183,8 +185,8 @@ footer {
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 2px;
+  top: 5px;
+  right: 15px;
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
@@ -192,11 +194,6 @@ footer {
 
 .close:hover {
   color: red;
-}
-
-.commentss {
-  margin-top: 20px;
-  width: 100%;
 }
 
 #form {
@@ -208,12 +205,14 @@ footer {
 }
 
 input {
-  border-radius: 3px;
+  border-radius: 5px;
   border: solid rgb(0, 51, 34) 1px;
   padding: 6px;
 }
 
 textarea {
+  padding: 6px;
+  margin-bottom: 5px;
   border-radius: 5px;
 }
 
@@ -227,4 +226,28 @@ textarea {
   border: none;
   color: white;
   cursor: pointer;
+}
+
+hr {
+  margin: 0.5rem 0;
+}
+
+.date {
+  font-style: italic;
+}
+
+.commentaire {
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+
+.add-comment {
+  margin-top: 2rem;
+}
+
+.image {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
