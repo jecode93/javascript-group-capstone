@@ -41,7 +41,11 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Dynamic Content]**
+- Vast Meal Collection: Our Meal App boasts a vast collection of meals sourced from an API, ensuring users have access to an extensive range of cuisines, dishes, and cooking styles.
+
+- Interactive User Comments: Users can engage with the app by leaving comments and feedback on the meals they try. This fosters a vibrant community where users can share their culinary experiences and tips.
+
+- Recipe Sharing: Our app encourages users to contribute by sharing their own favorite recipes with the community. This feature promotes collaboration and allows users to inspire and learn from one another, making it a truly interactive platform for food enthusiasts.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
