@@ -69,6 +69,11 @@ Example commands:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Live Demo
+See the project here: [Live demo will be available after approvment]()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Jean Emmanuel Cadet**
