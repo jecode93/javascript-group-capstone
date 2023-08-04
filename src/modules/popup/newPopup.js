@@ -15,48 +15,52 @@ const showPopup = async (mealId) => {
       // Create the popup content
       const commentPopup = document.createElement('div');
       commentPopup.innerHTML = `
-      <div class='popup'>
-        <span class="close" id="close">&times;</span>
+        <div class='popup'>
+          <span class="close" id="close">&times;</span>
           <div class='image'>
-          <img id="popup-image" src="${meal.strMealThumb}" alt="${meal.strMeal}">
+            <img id="popup-image" src="${meal.strMealThumb}" alt="${meal.strMeal}">
           </div>
           <h3 id="popup-title">${meal.strMeal}</h3>
           <ul id="foodDetail" class="food-detail">
             <li><strong>Area:</strong> ${meal.strArea} </li>
-            <li><strong>Category:</strong> ${meal.strCategory} Pizaaa</li>
+            <li><strong>Category:</strong> ${meal.strCategory} Pizza</li>
           </ul>
           <hr>
           <h3> Comments </h3>
-          <div class='list-comments'> </div>
+          <div class='list-comments'></div>
           <div class='add-comment'>
             <h2>Add a comment</h2>
-              <div class="list-comments"></div>
-              <form id="form" action="">
-                <label for="name"></label>
-                <input type="text" id="name" placeholder="Enter your name" required/>
-                <label for="message"></label>
-                <textarea id="message" name="message" rows="4" placeholder='Enter your comment' required></textarea>
-                <button type='button' id="btn-comment">Comment</button>
-              </form>
+            <form id="form" action="">
+              <label for="name">Name:</label>
+              <input type="text" id="name" placeholder="Enter your name" required/>
+              <label for="message">Comment:</label>
+              <textarea id="message" name="message" rows="4" placeholder='Enter your comment' required></textarea>
+              <button type='button' id="btn-comment">Comment</button>
+            </form>
           </div>
-      </div>
+        </div>
       `;
+
       const popupSection = document.querySelector('.popup-sec');
       popupSection.innerHTML = '';
       popupSection.appendChild(commentPopup);
-      // Append the popup content to the body
 
       const comments = await allComments(mealId);
 
       const commentsDiv = commentPopup.querySelector('.list-comments');
+      commentsDiv.innerHTML = ''; // Clear the container before adding updated comments
+
       if (comments.length > 0) {
         comments.forEach((comment) => {
           const commentItem = document.createElement('div');
           commentItem.classList.add('comment-item');
           commentItem.innerHTML = `
-          <div class='commentaire'>
-            <p class="username"> <span class="date">${comment.creation_date} </span> ${comment.username}: <span class="comment-text"> ${comment.comment}</span></p>            
-          </div>
+            <div class='commentaire'>
+              <p class="username">
+                <span class="date">${comment.creation_date}</span>
+                ${comment.username}: <span class="comment-text">${comment.comment}</span>
+              </p>
+            </div>
           `;
           commentsDiv.appendChild(commentItem);
         });
@@ -79,15 +83,27 @@ const showPopup = async (mealId) => {
           // Clear the input fields after posting the comment
           usernameInput.value = '';
           commentInput.value = '';
-          const updatedComment = await allComments(mealId);
-          const div = document.querySelector('.comment-item');
-          updatedComment.forEach((item) => {
-            div.innerHTML = `
-            <div class='commentaire'>
-              <p class="username"> <span class="date">${item.creation_date} </span> ${item.username}: <span class="comment-text"> ${item.comment}</span></p>            
-            </div>
-          `;
-          });
+          const updatedComments = await allComments(mealId);
+          commentsDiv.innerHTML = ''; // Clear the container before adding updated comments
+          if (updatedComments.length > 0) {
+            updatedComments.forEach((comment) => {
+              const commentItem = document.createElement('div');
+              commentItem.classList.add('comment-item');
+              commentItem.innerHTML = `
+                <div class='commentaire'>
+                  <p class="username">
+                    <span class="date">${comment.creation_date}</span>
+                    ${comment.username}: <span class="comment-text">${comment.comment}</span>
+                  </p>
+                </div>
+              `;
+              commentsDiv.appendChild(commentItem);
+            });
+          } else {
+            const noCommentsMessage = document.createElement('p');
+            noCommentsMessage.textContent = 'No comments yet.';
+            commentsDiv.appendChild(noCommentsMessage);
+          }
         }
       });
 
