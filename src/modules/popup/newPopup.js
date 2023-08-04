@@ -26,6 +26,8 @@ const updateCommentsSection = (comments, commentsDiv) => {
 };
 
 const showPopup = async (mealId) => {
+  const blurr = document.querySelector('#overlay');
+  blurr.classList.add('overlay');
   const popupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
   try {
     const response = await fetch(popupUrl);
@@ -49,7 +51,7 @@ const showPopup = async (mealId) => {
             <li><strong>Category:</strong> ${meal.strCategory} Pizza</li>
           </ul>
           <hr>
-          <h3> Comments <span id="comments-count">(${comments.length})</span> </h3>
+          <h3 id ="cmt"> Comments <span id="comments-count">(${comments.length})</span> </h3>
           <div class='list-comments'></div>
           <div class='add-comment'>
             <h2>Add a comment</h2>
@@ -106,6 +108,8 @@ const showPopup = async (mealId) => {
 
       const closer = commentPopup.querySelector('.close');
       closer.addEventListener('click', () => {
+        const blurr = document.querySelector('#overlay');
+        blurr.classList.remove('overlay');
         closePopup();
       });
     } else {
