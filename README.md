@@ -34,6 +34,7 @@
 - **[Javascript]**
 - **[WebPack]**
 - **[API]**
+- **[Jest]**
 
 
 
