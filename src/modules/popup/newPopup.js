@@ -2,12 +2,35 @@ import allComments from '../getAllComments.js';
 import newComment from '../newComment.js';
 import { closePopup } from './popup.js';
 
+const updateCommentsSection = (comments, commentsDiv) => {
+  commentsDiv.innerHTML = ''; // Clear the container before adding updated comments
+  if (comments.length > 0) {
+    comments.forEach((comment) => {
+      const commentItem = document.createElement('div');
+      commentItem.classList.add('comment-item');
+      commentItem.innerHTML = `
+        <div class='commentaire'>
+          <p class="username">
+            <span class="date">${comment.creation_date}</span>
+            ${comment.username}: <span class="comment-text">${comment.comment}</span>
+          </p>
+        </div>
+      `;
+      commentsDiv.appendChild(commentItem);
+    });
+  } else {
+    const noCommentsMessage = document.createElement('p');
+    noCommentsMessage.textContent = 'No comments yet.';
+    commentsDiv.appendChild(noCommentsMessage);
+  }
+};
+
 const showPopup = async (mealId) => {
   const popupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
   try {
     const response = await fetch(popupUrl);
     const data = await response.json();
-
+    const comments = await allComments(mealId);
     // Check if data.meals is not null and contains at least one meal
     if (data.meals && data.meals.length > 0) {
       const meal = data.meals[0];
@@ -26,7 +49,7 @@ const showPopup = async (mealId) => {
             <li><strong>Category:</strong> ${meal.strCategory} Pizza</li>
           </ul>
           <hr>
-          <h3> Comments </h3>
+          <h3> Comments <span id="comments-count">(${comments.length})</span> </h3>
           <div class='list-comments'></div>
           <div class='add-comment'>
             <h2>Add a comment</h2>
@@ -45,30 +68,17 @@ const showPopup = async (mealId) => {
       popupSection.innerHTML = '';
       popupSection.appendChild(commentPopup);
 
-      const comments = await allComments(mealId);
-
       const commentsDiv = commentPopup.querySelector('.list-comments');
       commentsDiv.innerHTML = ''; // Clear the container before adding updated comments
 
-      if (comments.length > 0) {
-        comments.forEach((comment) => {
-          const commentItem = document.createElement('div');
-          commentItem.classList.add('comment-item');
-          commentItem.innerHTML = `
-            <div class='commentaire'>
-              <p class="username">
-                <span class="date">${comment.creation_date}</span>
-                ${comment.username}: <span class="comment-text">${comment.comment}</span>
-              </p>
-            </div>
-          `;
-          commentsDiv.appendChild(commentItem);
-        });
-      } else {
-        const noCommentsMessage = document.createElement('p');
-        noCommentsMessage.textContent = 'No comments yet.';
-        commentsDiv.appendChild(noCommentsMessage);
-      }
+      // Display initial comments
+      updateCommentsSection(comments, commentsDiv);
+
+      // Function to update comment count
+      const updateCommentCount = async (count) => {
+        const commentsCountElement = commentPopup.querySelector('#comments-count');
+        commentsCountElement.textContent = count;
+      };
 
       // Add event listener to the "Comment" button
       const commentButton = commentPopup.querySelector('#btn-comment');
@@ -83,27 +93,14 @@ const showPopup = async (mealId) => {
           // Clear the input fields after posting the comment
           usernameInput.value = '';
           commentInput.value = '';
+
+          // Update comment count after a new comment is posted
+          const updatedCommentsCount = await allComments(mealId);
+          updateCommentCount(updatedCommentsCount.length);
+
+          // Update comments section with the new comment
           const updatedComments = await allComments(mealId);
-          commentsDiv.innerHTML = ''; // Clear the container before adding updated comments
-          if (updatedComments.length > 0) {
-            updatedComments.forEach((comment) => {
-              const commentItem = document.createElement('div');
-              commentItem.classList.add('comment-item');
-              commentItem.innerHTML = `
-                <div class='commentaire'>
-                  <p class="username">
-                    <span class="date">${comment.creation_date}</span>
-                    ${comment.username}: <span class="comment-text">${comment.comment}</span>
-                  </p>
-                </div>
-              `;
-              commentsDiv.appendChild(commentItem);
-            });
-          } else {
-            const noCommentsMessage = document.createElement('p');
-            noCommentsMessage.textContent = 'No comments yet.';
-            commentsDiv.appendChild(noCommentsMessage);
-          }
+          updateCommentsSection(updatedComments, commentsDiv);
         }
       });
 
