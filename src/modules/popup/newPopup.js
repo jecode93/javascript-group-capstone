@@ -36,7 +36,7 @@ const showPopup = async (mealId) => {
                 <input type="text" id="name" placeholder="Enter your name" required/>
                 <label for="message"></label>
                 <textarea id="message" name="message" rows="4" placeholder='Enter your comment' required></textarea>
-                <button id="btn-comment">Comment</button>
+                <button type='button' id="btn-comment">Comment</button>
               </form>
           </div>
       </div>
@@ -79,6 +79,15 @@ const showPopup = async (mealId) => {
           // Clear the input fields after posting the comment
           usernameInput.value = '';
           commentInput.value = '';
+          const updatedComment = await allComments(mealId);
+          const div = document.querySelector('.comment-item');
+          updatedComment.forEach((item) => {
+            div.innerHTML = `
+            <div class='commentaire'>
+              <p class="username"> <span class="date">${item.creation_date} </span> ${item.username}: <span class="comment-text"> ${item.comment}</span></p>            
+            </div>
+          `;
+          });
         }
       });
 
