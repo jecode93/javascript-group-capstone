@@ -1,0 +1,319 @@
+:root {
+  --main-color: #5c3838;
+  --second-color: #9d9ac0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #9794932d;
+  backdrop-filter: blur(3px);
+}
+
+.hided {
+  display: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #eee;
+}
+
+header {
+  padding: 0;
+  margin: 0;
+  background-color: var(--main-color);
+  color: white;
+}
+
+header .navigation {
+  padding: 1rem;
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigation h3 {
+  font-size: 3rem;
+  font-weight: 300;
+  border: 1px solid var(--second-color);
+  padding: 0.2rem 1.5rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+header .navigation .nav-links {
+  display: -webkit-box;
+  display: flex;
+  -webkit-column-gap: 2rem;
+  -moz-column-gap: 2rem;
+  column-gap: 2rem;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.nav-links a:hover {
+  border-bottom: 1px solid var(--second-color);
+  transition: all 1s;
+}
+
+footer {
+  height: 2rem;
+}
+
+.footer {
+  background-color: var(--main-color);
+  padding: 1rem;
+}
+
+.footer-text {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: white;
+}
+
+#meal-section {
+  margin: 2rem 2rem;
+}
+
+.meals-lists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.meal-list {
+  background-color: var(--second-color);
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+.meal-list img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.card-title h3 {
+  font-size: 2rem;
+  color: var(--main-color);
+  font-family: 'Dancing Script', cursive;
+}
+
+.icon-like {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.favorite {
+  color: var(--main-color);
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.favorite:hover {
+  color: white;
+  transition: 0.2s;
+}
+
+.meal-card-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.comment {
+  padding: 0.3rem 0.9rem;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 50rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 7px 7px 5px -7px rgba(0, 0, 0, 0.52);
+  margin-bottom: 1rem;
+}
+
+.comment:hover {
+  background-color: white;
+  color: var(--second-color);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+/* Add your desired styles for the popup window here */
+.popup-sec {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fffdeb;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-width: 50%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 6px;
+}
+
+.popup img {
+  margin-left: 20px;
+  width: 80%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.popup h3 {
+  margin: 10px 0;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+#form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin-top: 5px;
+}
+
+input {
+  border-radius: 5px;
+  border: solid rgb(0, 51, 34) 1px;
+  padding: 6px;
+}
+
+textarea {
+  padding: 6px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#displayed {
+  margin-top: 3%;
+}
+
+#btn-comment {
+  padding: 8px;
+  background-color: green;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+hr {
+  margin: 0.5rem 0;
+}
+
+.date {
+  font-style: italic;
+}
+
+.commentaire {
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+
+.add-comment {
+  margin-top: 2rem;
+}
+
+.image {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#popup-title {
+  font-family: inherit;
+  font-size: 25px;
+  margin-left: 1.3rem;
+  margin-top: 10px;
+}
+
+#foodDetail {
+  font-family: inherit;
+  font-size: 17px;
+  margin-left: 1.3rem;
+  margin-top: 10px;
+}
+
+.list-comments {
+  font-family: inherit;
+  font-size: 14px;
+  margin-left: 1.3rem;
+  margin-top: 10px;
+}
+
+#cmt {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 1.3rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 820px) {
+  .meals-lists {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .navigation {
+    width: 100%;
+  }
+
+  .meals-lists {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    margin: 20px auto;
+  }
+}
