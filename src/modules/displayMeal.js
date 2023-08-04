@@ -1,7 +1,7 @@
 // script.js
 import getLikes from './getLikes.js';
 import postLike from './postlikes.js';
-import { closePopup, addPopupOutsideClickListener } from './popup/popup.js';
+import { addPopupOutsideClickListener } from './popup/popup.js';
 import showPopup from './popup/newPopup.js';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
@@ -14,9 +14,6 @@ const displayMeal = async () => {
     const apiCall = await fetch(url);
     const response = await apiCall.json();
     const data = response.meals;
-    const span = document.createElement('span');
-    span.innerHTML = ` (${data.length})`;
-    mealCount.appendChild(span);
 
     data.forEach((meal) => {
       const li = document.createElement('li');
@@ -58,8 +55,6 @@ const displayMeal = async () => {
     console.error(`Error fetching meal: ${error}`);
   }
 };
-
-document.addEventListener('DOMContentLoaded', displayMeal);
 
 // Close the popup when the close button is clicked
 

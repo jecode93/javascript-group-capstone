@@ -9,10 +9,14 @@
     "start": "webpack-dev-server --open"
   },
   "keywords": [],
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.22.9",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "@babel/preset-env": "^7.22.9",
     "babel-cli": "6.24.1",
     "babel-eslint": "^10.1.0",
@@ -26,6 +30,7 @@
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.3",
     "jest": "^29.6.2",
+    "jest-environment-jsdom": "^29.6.2",
     "sass": "^1.64.1",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
