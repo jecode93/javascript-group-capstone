@@ -1,6 +1,7 @@
 import allComments from '../getAllComments.js';
 import newComment from '../newComment.js';
 import { closePopup } from './popup.js';
+import commentCounter from './commentCounter.js';
 
 const updateCommentsSection = (comments, commentsDiv) => {
   commentsDiv.innerHTML = ''; // Clear the container before adding updated comments
@@ -51,7 +52,7 @@ const showPopup = async (mealId) => {
             <li><strong>Category:</strong> ${meal.strCategory} Pizza</li>
           </ul>
           <hr>
-          <h3 id ="cmt"> Comments <span id="comments-count">(${comments.length})</span> </h3>
+          <h3 id ="cmt"> Comments <span id="comments-count">(${commentCounter(comments)})</span> </h3>
           <div class='list-comments'></div>
           <div class='add-comment'>
             <h2>Add a comment</h2>
