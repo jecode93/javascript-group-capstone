@@ -76,7 +76,7 @@ Example commands:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Live Demo
-See the project here: [Live demo will be available after approvment]()
+See the project here: [Live demo](https://jecode93.github.io/javascript-group-capstone/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
