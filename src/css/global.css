@@ -192,7 +192,6 @@ footer {
 }
 
 .popup img {
-  margin-left: 20px;
   width: 80%;
   height: auto;
   border-radius: 6px;
@@ -271,24 +270,25 @@ hr {
   align-items: center;
 }
 
+#popup-image {
+  width: 100%;
+}
+
 #popup-title {
   font-family: inherit;
   font-size: 25px;
-  margin-left: 1.3rem;
   margin-top: 10px;
 }
 
 #foodDetail {
   font-family: inherit;
   font-size: 17px;
-  margin-left: 1.3rem;
   margin-top: 10px;
 }
 
 .list-comments {
   font-family: inherit;
   font-size: 14px;
-  margin-left: 1.3rem;
   margin-top: 10px;
 }
 
@@ -296,7 +296,6 @@ hr {
   font-family: inherit;
   font-size: 20px;
   font-weight: bold;
-  margin-left: 1.3rem;
   margin-top: 10px;
 }
 
